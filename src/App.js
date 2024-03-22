@@ -1,23 +1,36 @@
-import logo from './logo.svg';
 import './App.css';
+import { Routes, Route } from 'react-router-dom';
+import React from 'react';
+import Home from './components/Home';
+import Login from './components/Login';
+import Payment from './components/Payment';
+import Profile from './components/Profile';
+import Signup from './components/Signup';
+import PlaysMenu from './components/PlaysMenu';
+import NotFound from './components/NotFound';
+import Navbar from './components/Navbar';
+import AboutUs from './components/AboutUs';
+import PlayDetails from './components/PlayDetails';
+import SeatSelect from './components/SeatSelect';
+import { Footer } from './components/Footer';
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Navbar />
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/login" element={<Login />} />
+        <Route path="/profile" element={<Profile />} />
+        <Route path="/plays" element={<PlaysMenu />} />
+        <Route path="/aboutUs" element={<AboutUs />} />
+        <Route path="/signUp" element={<Signup />} />
+        <Route path="/plays/:playName" element={<PlayDetails />} />
+        <Route path="/plays/:playName/seat-select" element={<SeatSelect />} />
+        <Route path="/plays/:playName/payment" element={<Payment />} />
+        <Route path="*" element={<NotFound />} />
+      </Routes>
+      <Footer/>
     </div>
   );
 }
