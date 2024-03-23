@@ -1,109 +1,87 @@
-import Play1 from '../images/plays/asi.jpg';
-import Play2 from '../images/plays/assassin.jpg';
-import Play3 from '../images/plays/cizmeli-kedi-2.jpg';
-import Play4 from '../images/plays/cocaine-bear.jpg';
-import Play5 from '../images/plays/convenience-store.jpg';
-import Play6 from '../images/plays/dungeons-dragons.jpg';
-import Play7 from '../images/plays/ela-ile-hilmi-ve-ali.jpg';
-import Play8 from '../images/plays/gizemli-ada-mencuna.jpg';
-import Play9 from '../images/plays/john-wick-4.jpg';
-import Play10 from '../images/plays/maybe-i-do.jpg';
-import Play11 from '../images/plays/missing.jpg';
-import Play12 from '../images/plays/mitat.jpg';
-import Play13 from '../images/plays/simulant.jpg';
-import Play14 from '../images/plays/the-friendship-game.jpg';
-import Play15 from '../images/plays/the-quiet-girl.jpg';
-
+import Play1 from '../images/plays/resim1.jpg';
+import Play2 from '../images/plays/resim2.jpg';
+import Play3 from '../images/plays/resim3.jpg';
+import Play4 from '../images/plays/resim4.jpg';
+import Play5 from '../images/plays/resim5.jpg';
+import Play6 from '../images/plays/resim6.jpg';
+import Play7 from '../images/plays/resim7.jpg';
+import Play8 from '../images/plays/resim8.jpg';
+import Play9 from '../images/plays/resim8.jpg';
+import Play10 from '../images/plays/resim10.jpeg';
+import Play11 from '../images/plays/resim11.jpeg';
+import Play12 from '../images/plays/resim12.jpg';
 
 export const Data = [
   {
-    name: 'Play1',
+    name: '39 Buçuk Basamak',
     image: Play1,
-    content: 'tiyatronun konusu vs.',
-    genre: 'Yetişkin',
+    genre: 'Komedi',
+    date: '21 Mart - 29 Nisan',
   },
   {
-    name: 'Play2',
+    name: 'Şıngır Şıngır Beyoğlu',
     image: Play2,
-    content: 'tiyatronun konusu vs.',
-    genre: 'Çocuk',
+    genre: 'Komedi',
+    date: '22 Mart - 17 Mayıs',
   },
   {
-    name: 'Play3',
+    name: 'Ağaçlar Ayakta Ölür',
     image: Play3,
-    content: 'tiyatronun konusu vs.',
-    genre: 250,
+    genre: 'Komedi',
+    date: '18 Mart - 17 Mayıs',
   },
   {
-    name: 'Play',
+    name: 'Bana Bunu Yapma',
     image: Play4,
-    content: 'tiyatronun konusu vs.',
-    genre: 250,
+    genre: 'Komedi',
+    date: '20 Mart - 15 Mayıs',
   },
   {
-    name: 'Play',
+    name: 'Bir Garip Orhan Veli',
     image: Play5,
-    content: 'tiyatronun konusu vs.',
-    genre: 250,
+    genre: 'Müzikal Tiyatro',
+    date: '01 Nisan - 07 Mayıs',
   },
   {
-    name: 'Play',
+    name: 'Dedektif Muhsin',
     image: Play6,
-    content: 'tiyatronun konusu vs.',
-    genre: 250,
+    genre: 'Komedi',
+    date: '19 Nisan - 26 Nisan',
   },
   {
-    name: 'Play',
+    name: 'Hiç Kimsenin Öyküsü',
     image: Play7,
-    content: 'tiyatronun konusu vs.',
-    genre: 250,
+    genre: 'Trajedi & Dram',
+    date: '19 Mart - 26 Mart',
   },
   {
-    name: 'Play',
+    name: 'Kötü Bir Gün',
     image: Play8,
-    content: 'tiyatronun konusu vs.',
-    genre: 250,
+    genre: 'Komedi',
+    date: '21 Mart - 29 Nisan',
   },
   {
-    name: 'Play',
+    name: 'Üç Eksi Bir',
     image: Play9,
-    content: 'tiyatronun konusu vs.',
-    genre: 250,
+    genre: 'Trajedi & Dram',
+    date: '29 Mart - 25 Mayıs ',
   },
   {
-    name: 'Play',
+    name: 'Dracula Müzikali',
     image: Play10,
-    content: 'tiyatronun konusu vs.',
-    genre: 250,
+    genre: 'Müzikal & Kabare',
+    date: '18 Mart - 06 Haziran',
   },
   {
-    name: 'Play',
+    name: 'Toz',
     image: Play11,
-    content: 'tiyatronun konusu vs.',
-    genre: 250,
+    genre: 'Trajedi & Dram',
+    date: '18 Mart - 21 Nisan ',
   },
   {
-    name: 'Play',
+    name: 'Küheylan',
     image: Play12,
-    content: 'tiyatronun konusu vs.',
-    genre: 250,
-  },
-  {
-    name: 'Play',
-    image: Play13,
-    content: 'tiyatronun konusu vs.',
-    genre: 250,
-  },
-  {
-    name: 'Play',
-    image: Play14,
-    content: 'tiyatronun konusu vs.',
-    genre: 250,
-  },
-  {
-    name: 'Play',
-    image: Play15,
-    content: 'tiyatronun konusu vs.',
-    genre: 250,
+    genre: 'Trajedi & Dram',
+    date: '24 Mart - 26 Mayıs',
   },
 ];

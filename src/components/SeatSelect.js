@@ -5,6 +5,10 @@ import '../styles/SeatSelect.css';
 export default function SeatSelect() {
     const { playName } = useParams();
 
+    // Koltuklar için bir dizi oluştur
+    const rows = Array.from({ length: 8 }, (_, index) => String.fromCharCode(65 + index));
+    const seats = Array.from({ length: 16 }, (_, index) => index + 1);
+
     function buyTicket() {
         console.log("ok")
     }
@@ -29,223 +33,16 @@ export default function SeatSelect() {
                 
                 <div className="container-seat">
                     <div className="stage">SAHNE</div>
-                    <div className="row">
-                    <div id="1" className="seat occupied">A1</div>
-                    <div id="2" className="seat">B2</div>
-                    <div id="3" className="seat">C3</div>
-                    <div id="4" className="seat">D4</div>
-                    <div id="5" className="seat">E5</div>
-                    <div id="6" className="seat">F6</div>
-                    <div id="7" className="seat occupied">G7</div>
-                    <div id="8" className="seat occupied">H8</div>
-                    <div id="9" className="seat">J9</div>
-                    <div id="10" className="seat">K10</div>
-                    <div id="11" className="seat">L11</div>
-                    <div id="12" className="seat">M12</div>
-                    <div id="13" className="seat">N13</div>
-                    <div id="14" className="seat">O14</div>
-                    <div id="15" className="seat">P15</div>
-                    <div id="16" className="seat">R16</div>
-                    </div>
-                    <div className="row">
-                    <div id="1" className="seat">A1</div>
-                    <div id="2" className="seat">B2</div>
-                    <div id="3" className="seat">C3</div>
-                    <div id="4" className="seat">D4</div>
-                    <div id="5" className="seat">E5</div>
-                    <div id="6" className="seat">F6</div>
-                    <div id="7" className="seat">G7</div>
-                    <div id="8" className="seat">H8</div>
-                    <div id="9" className="seat">J9</div>
-                    <div id="10" className="seat">K10</div>
-                    <div id="11" className="seat">L11</div>
-                    <div id="12" className="seat">M12</div>
-                    <div id="13" className="seat">N13</div>
-                    <div id="14" className="seat">O14</div>
-                    <div id="15" className="seat">P15</div>
-                    <div id="16" className="seat">R16</div>
-                    </div>
-                    <div className="row">
-                    <div id="1" className="seat">A1</div>
-                    <div id="2" className="seat">B2</div>
-                    <div id="3" className="seat">C3</div>
-                    <div id="4" className="seat">D4</div>
-                    <div id="5" className="seat">E5</div>
-                    <div id="6" className="seat">F6</div>
-                    <div id="7" className="seat">G7</div>
-                    <div id="8" className="seat">H8</div>
-                    <div id="9" className="seat">J9</div>
-                    <div id="10" className="seat">K10</div>
-                    <div id="11" className="seat">L11</div>
-                    <div id="12" className="seat">M12</div>
-                    <div id="13" className="seat">N13</div>
-                    <div id="14" className="seat">O14</div>
-                    <div id="15" className="seat">P15</div>
-                    <div id="16" className="seat">R16</div>
-                    </div>
-                    <div className="row">
-                    <div id="1" className="seat">A1</div>
-                    <div id="2" className="seat">B2</div>
-                    <div id="3" className="seat">C3</div>
-                    <div id="4" className="seat">D4</div>
-                    <div id="5" className="seat">E5</div>
-                    <div id="6" className="seat">F6</div>
-                    <div id="7" className="seat">G7</div>
-                    <div id="8" className="seat">H8</div>
-                    <div id="9" className="seat">J9</div>
-                    <div id="10" className="seat">K10</div>
-                    <div id="11" className="seat">L11</div>
-                    <div id="12" className="seat">M12</div>
-                    <div id="13" className="seat">N13</div>
-                    <div id="14" className="seat">O14</div>
-                    <div id="15" className="seat">P15</div>
-                    <div id="16" className="seat">R16</div>
-                    </div>
-                    <div className="row">
-                    <div id="1" className="seat">A1</div>
-                    <div id="2" className="seat">B2</div>
-                    <div id="3" className="seat">C3</div>
-                    <div id="4" className="seat">D4</div>
-                    <div id="5" className="seat">E5</div>
-                    <div id="6" className="seat">F6</div>
-                    <div id="7" className="seat">G7</div>
-                    <div id="8" className="seat">H8</div>
-                    <div id="9" className="seat">J9</div>
-                    <div id="10" className="seat">K10</div>
-                    <div id="11" className="seat">L11</div>
-                    <div id="12" className="seat">M12</div>
-                    <div id="13" className="seat">N13</div>
-                    <div id="14" className="seat">O14</div>
-                    <div id="15" className="seat">P15</div>
-                    <div id="16" className="seat">R16</div>
-                    </div>
-                    <div className="row">
-                    <div id="1" className="seat">A1</div>
-                    <div id="2" className="seat">B2</div>
-                    <div id="3" className="seat">C3</div>
-                    <div id="4" className="seat">D4</div>
-                    <div id="5" className="seat">E5</div>
-                    <div id="6" className="seat">F6</div>
-                    <div id="7" className="seat">G7</div>
-                    <div id="8" className="seat">H8</div>
-                    <div id="9" className="seat">J9</div>
-                    <div id="10" className="seat">K10</div>
-                    <div id="11" className="seat">L11</div>
-                    <div id="12" className="seat">M12</div>
-                    <div id="13" className="seat">N13</div>
-                    <div id="14" className="seat">O14</div>
-                    <div id="15" className="seat">P15</div>
-                    <div id="16" className="seat">R16</div>
-                    </div>
-                    <div className="divider"></div>
-                    <div className="row">
-                    <div id="1" className="seat">A1</div>
-                    <div id="2" className="seat">B2</div>
-                    <div id="3" className="seat">C3</div>
-                    <div id="4" className="seat">D4</div>
-                    <div id="5" className="seat">E5</div>
-                    <div id="6" className="seat">F6</div>
-                    <div id="7" className="seat">G7</div>
-                    <div id="8" className="seat">H8</div>
-                    <div id="9" className="seat">J9</div>
-                    <div id="10" className="seat">K10</div>
-                    <div id="11" className="seat">L11</div>
-                    <div id="12" className="seat">M12</div>
-                    <div id="13" className="seat">N13</div>
-                    <div id="14" className="seat">O14</div>
-                    <div id="15" className="seat">P15</div>
-                    <div id="16" className="seat">R16</div>
-                    </div>
-                    <div className="row">
-                    <div id="1" className="seat">A1</div>
-                    <div id="2" className="seat">B2</div>
-                    <div id="3" className="seat">C3</div>
-                    <div id="4" className="seat">D4</div>
-                    <div id="5" className="seat">E5</div>
-                    <div id="6" className="seat">F6</div>
-                    <div id="7" className="seat">G7</div>
-                    <div id="8" className="seat">H8</div>
-                    <div id="9" className="seat">J9</div>
-                    <div id="10" className="seat">K10</div>
-                    <div id="11" className="seat">L11</div>
-                    <div id="12" className="seat">M12</div>
-                    <div id="13" className="seat">N13</div>
-                    <div id="14" className="seat">O14</div>
-                    <div id="15" className="seat">P15</div>
-                    <div id="16" className="seat">R16</div>
-                    </div>
-                    <div className="row">
-                    <div id="1" className="seat">A1</div>
-                    <div id="2" className="seat">B2</div>
-                    <div id="3" className="seat">C3</div>
-                    <div id="4" className="seat">D4</div>
-                    <div id="5" className="seat">E5</div>
-                    <div id="6" className="seat">F6</div>
-                    <div id="7" className="seat">G7</div>
-                    <div id="8" className="seat">H8</div>
-                    <div id="9" className="seat">J9</div>
-                    <div id="10" className="seat">K10</div>
-                    <div id="11" className="seat">L11</div>
-                    <div id="12" className="seat">M12</div>
-                    <div id="13" className="seat">N13</div>
-                    <div id="14" className="seat">O14</div>
-                    <div id="15" className="seat">P15</div>
-                    <div id="16" className="seat">R16</div>
-                    </div>
-                    <div className="row">
-                    <div id="1" className="seat">A1</div>
-                    <div id="2" className="seat">B2</div>
-                    <div id="3" className="seat">C3</div>
-                    <div id="4" className="seat">D4</div>
-                    <div id="5" className="seat">E5</div>
-                    <div id="6" className="seat">F6</div>
-                    <div id="7" className="seat">G7</div>
-                    <div id="8" className="seat">H8</div>
-                    <div id="9" className="seat">J9</div>
-                    <div id="10" className="seat">K10</div>
-                    <div id="11" className="seat">L11</div>
-                    <div id="12" className="seat">M12</div>
-                    <div id="13" className="seat">N13</div>
-                    <div id="14" className="seat">O14</div>
-                    <div id="15" className="seat">P15</div>
-                    <div id="16" className="seat">R16</div>
-                    </div>
-                    <div className="row">
-                    <div id="1" className="seat">A1</div>
-                    <div id="2" className="seat">B2</div>
-                    <div id="3" className="seat">C3</div>
-                    <div id="4" className="seat">D4</div>
-                    <div id="5" className="seat">E5</div>
-                    <div id="6" className="seat">F6</div>
-                    <div id="7" className="seat">G7</div>
-                    <div id="8" className="seat">H8</div>
-                    <div id="9" className="seat">J9</div>
-                    <div id="10" className="seat">K10</div>
-                    <div id="11" className="seat">L11</div>
-                    <div id="12" className="seat">M12</div>
-                    <div id="13" className="seat">N13</div>
-                    <div id="14" className="seat">O14</div>
-                    <div id="15" className="seat">P15</div>
-                    <div id="16" className="seat">R16</div>
-                    </div>
-                    <div className="row">
-                    <div id="1" className="seat">A1</div>
-                    <div id="2" className="seat">B2</div>
-                    <div id="3" className="seat">C3</div>
-                    <div id="4" className="seat">D4</div>
-                    <div id="5" className="seat">E5</div>
-                    <div id="6" className="seat">F6</div>
-                    <div id="7" className="seat">G7</div>
-                    <div id="8" className="seat">H8</div>
-                    <div id="9" className="seat">J9</div>
-                    <div id="10" className="seat">K10</div>
-                    <div id="11" className="seat">L11</div>
-                    <div id="12" className="seat">M12</div>
-                    <div id="13" className="seat">N13</div>
-                    <div id="14" className="seat">O14</div>
-                    <div id="15" className="seat">P15</div>
-                    <div id="16" className="seat">R16</div>
-                    </div>
+                        {/* Koltukları döngü ile oluştur */}
+                        {rows.map(row => (
+                            <div key={row} className="row">
+                                {seats.map(seat => (
+                                    <div key={`${row}-${seat}`} className="seat">
+                                        {row}{seat}
+                                    </div>
+                                ))}
+                            </div>
+                        ))}
                 </div>
             </div>
 

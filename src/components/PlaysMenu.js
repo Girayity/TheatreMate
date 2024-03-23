@@ -14,8 +14,8 @@ export default function Plays() {
               key={key}
               image={menuItem.image}
               name={menuItem.name}
-              content={menuItem.content}
               genre={menuItem.genre}
+              date={menuItem.date}
             />
           );
         })}

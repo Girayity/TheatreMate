@@ -21,7 +21,6 @@
   justify-content: center;
   height: 100vh;
   overflow: hidden;
-  margin-top: -100px;
 } 
 
 .movie-container {
@@ -64,6 +63,12 @@
   margin:6px 6px 6px 6px;
   border-top-left-radius: 10px;
   border-top-right-radius: 10px;
+}
+
+.seat:hover {
+  background-color: yellow; /* Koltuğun hover rengi */
+  color: black;
+  cursor: pointer; /* Fare imleci değişsin */
 }
 
 .seat.selected {
@@ -127,7 +132,7 @@
     margin: 15px 0;  
     border-radius: 0 0 30px 30px;
     text-align: center;
-    padding-top: 3%;
+    padding-top: 7%;
     font-size: 36px;
 }
 .divider{
@@ -155,9 +160,6 @@ p.text span {
   color: #6feaf6;
 }
 
-button {
-  margin: 20px;
-}
 .custom-btn {
   width: 130px;
   height: 40px;

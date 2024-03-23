@@ -10,10 +10,11 @@
 // https://www.mongodb.com/docs/mongodb-vscode/playgrounds/
 
 // Select the database to use.
-use('mongodbVSCodePlaygroundDB');
-
+use('TiyatroApp');
+console.log(db.getCollection("users").find({}))
+/* 
 // Insert a few documents into the sales collection.
-db.getCollection('sales').insertMany([
+db.getCollection('users').insertMany([
   { 'item': 'abc', 'price': 10, 'quantity': 2, 'date': new Date('2014-03-01T08:00:00Z') },
   { 'item': 'jkl', 'price': 20, 'quantity': 1, 'date': new Date('2014-03-01T09:00:00Z') },
   { 'item': 'xyz', 'price': 5, 'quantity': 10, 'date': new Date('2014-03-15T09:00:00Z') },
@@ -41,3 +42,4 @@ db.getCollection('sales').aggregate([
   // Group the total sales for each product.
   { $group: { _id: '$item', totalSaleAmount: { $sum: { $multiply: [ '$price', '$quantity' ] } } } }
 ]);
+ */
