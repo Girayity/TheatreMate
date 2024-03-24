@@ -1,12 +1,12 @@
 import '../styles/PlaysMenuItem.css';
 import { useNavigate} from 'react-router-dom';
 
-function PlaysMenuItem({ image, name, genre, date }) {
+function PlaysMenuItem({ image, name, imgUrl, genre, date, subject, director, writer, assistant_director, music, lights, decor, actors, length}) {
     const navigate = useNavigate();
 
     const handleClick = () => {
         // Parametreleri diğer sayfaya yönlendirme
-        navigate(`/plays/${name}`, { state: { image, name, genre, date} });
+        navigate(`/plays/${name}`, { state: { image, imgUrl, name, genre, date, subject, director, writer, assistant_director, music, lights, decor, actors, length} });
     };
 
     return (

@@ -50,14 +50,8 @@ export default function SeatSelect() {
                 <p className="text">
                     <span id="count">0</span> adet koltuk seçtiniz. 
                 </p>
-                <p className="text">
-                    Ödemeniz gereken tutar <span
-                    id="total"
-                    >0</span
-                > Lira.
-                </p>
                 <Link to={`/plays/${playName}/payment`}>
-                    <button className="custom-btn btn-1" onClick={buyTicket}>ÖDEME YAP</button>
+                    <button className="button-seatSelect" onClick={buyTicket}>Devam Et</button>
                 </Link>
                 
             </div>

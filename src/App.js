@@ -13,6 +13,7 @@ import AboutUs from './components/AboutUs';
 import PlayDetails from './components/PlayDetails';
 import SeatSelect from './components/SeatSelect';
 import { Footer } from './components/Footer';
+import Stages from './components/Stages';
 
 function App() {
   return (
@@ -23,6 +24,7 @@ function App() {
         <Route path="/login" element={<Login />} />
         <Route path="/profile" element={<Profile />} />
         <Route path="/plays" element={<PlaysMenu />} />
+        <Route path="/stages" element={<Stages />} />
         <Route path="/aboutUs" element={<AboutUs />} />
         <Route path="/signUp" element={<Signup />} />
         <Route path="/plays/:playName" element={<PlayDetails />} />

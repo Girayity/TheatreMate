@@ -16,6 +16,15 @@ export default function Plays() {
               name={menuItem.name}
               genre={menuItem.genre}
               date={menuItem.date}
+              subject={menuItem.subject}
+              director={menuItem.director}
+              writer={menuItem.writer}
+              assistant_director={menuItem.assistant_director}
+              music={menuItem.music}
+              lights={menuItem.lights}
+              decor={menuItem.decor}
+              actors={menuItem.actors}
+              length={menuItem.length}
             />
           );
         })}

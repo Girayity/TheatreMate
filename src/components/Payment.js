@@ -105,7 +105,7 @@ function Payment() {
               required
             />
           </div>
-          <button className="button-payment" type="submit">Ödemeyi Tamamla</button>
+          <button className="button-payment" type="submit"><b>Ödemeyi Tamamla</b></button>
         </form>
       </div>
       <OrderSummary/>

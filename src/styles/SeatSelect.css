@@ -66,7 +66,7 @@
 }
 
 .seat:hover {
-  background-color: yellow; /* Koltuğun hover rengi */
+  background-color: white; /* Koltuğun hover rengi */
   color: black;
   cursor: pointer; /* Fare imleci değişsin */
 }
@@ -145,6 +145,7 @@
 .payment-section{
   display: flex;
   flex-direction: column;
+  background-color: white;
   border: 2px solid black;
   border-radius: 20px;
   padding: 14px;
@@ -157,55 +158,20 @@ p.text {
 }
 
 p.text span {
-  color: #6feaf6;
+  color: black;
 }
 
-.custom-btn {
-  width: 130px;
-  height: 40px;
-  color: #fff;
-  border-radius: 5px;
-  padding: 10px 25px;
-  font-family: 'Lato', sans-serif;
-  font-weight: 500;
-  background: transparent;
-  cursor: pointer;
-  transition: all 0.3s ease;
-  position: relative;
-  display: inline-block;
-   box-shadow:inset 2px 2px 2px 0px rgba(255,255,255,.5),
-   7px 7px 20px 0px rgba(0,0,0,.1),
-   4px 4px 5px 0px rgba(0,0,0,.1);
-  outline: none;
-}
-
-.btn-1 {
-  background: #e2071d;
-  border: none;
-  z-index: 1;
-}
-.btn-1:after {
-  position: absolute;
-  content: "";
-  width: 0;
-  height: 100%;
-  top: 0;
-  right: 0;
-  z-index: -1;
-  background-color: #4b19ff;
-  border-radius: 5px;
-   box-shadow:inset 2px 2px 2px 0px rgba(255,255,255,.5),
-   7px 7px 20px 0px rgba(0,0,0,.1),
-   4px 4px 5px 0px rgba(0,0,0,.1);
-  transition: all 0.3s ease;
-}
-.btn-1:hover {
-  color: #fff;
-}
-.btn-1:hover:after {
-  left: 0;
+.button-seatSelect {
   width: 100%;
+  padding: 10px;
+  background-color: black;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  font-size: 16px;
+  cursor: pointer;
 }
-.btn-1:active {
-  top: 2px;
+
+.button-seatSelect:hover {
+  background-color: gray;
 }

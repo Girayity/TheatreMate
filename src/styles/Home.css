@@ -24,6 +24,19 @@ h1{
   left: 5%;
 }
 
-p{
+.home-text{
   color: white;
+}
+
+.home-text{
+  margin-top: '5%'; 
+  font-size:'28px';
+}
+
+.home-button{
+  font-size: 14px;
+  width: 220px;
+  height: 45px;
+  margin-top: 32px;
+  border-radius: 4px;
 }

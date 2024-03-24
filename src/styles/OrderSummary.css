@@ -1,13 +1,14 @@
 .order-summary {
     width: 250px;
     max-height: 600px;
-    max-height: 600px;
+    max-height: 500px;
     margin-left: 20px;
     padding: 20px;
     border: 1px solid #ccc;
     border-radius: 10px;
     background-color: #f9f9f9;
     font-family: Arial, sans-serif;
+    overflow: auto;
   }
   
   .order-summary h2 {
@@ -33,7 +34,7 @@
   }
   
   .product-container:hover {
-    background-color: lightsteelblue; /* Fare üzerine gelindiğinde arkaplan rengini değiştir */
+    background-color: lightsteelblue; 
   }
 
   .product-info {
@@ -52,8 +53,12 @@
     margin-left: 92%;
 }
   .total{
-    position: absolute;
-    bottom: 0;
-    padding-bottom: 15px;
+    height: 80px;
+    padding: 30px 20px;
+    margin-left: 20px;
+    margin-top: 20px;
+    border-radius: 10px;
+    background-color: #f9f9f9;
+    font-family: Arial, sans-serif;
   }
   
