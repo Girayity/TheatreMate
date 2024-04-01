@@ -18,10 +18,10 @@ import Stages from './components/Stages';
 function App() {
   return (
     <div className="App">
-      <Navbar />
+      <Navbar/>
       <Routes>
         <Route path="/" element={<Home />} />
-        <Route path="/login" element={<Login />} />
+        <Route path="/login" element={<Login/>} />
         <Route path="/profile" element={<Profile />} />
         <Route path="/plays" element={<PlaysMenu />} />
         <Route path="/stages" element={<Stages />} />
