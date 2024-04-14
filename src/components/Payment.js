@@ -4,7 +4,7 @@ import { useState } from 'react';
 import OrderSummary from './OrderSummary';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faArrowLeft } from '@fortawesome/free-solid-svg-icons';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, useLocation } from 'react-router-dom';
 
 function Payment() {
   const [cardNumber, setCardNumber] = useState('');
@@ -12,20 +12,42 @@ function Payment() {
   const [expiryMonth, setExpiryMonth] = useState('');
   const [expiryYear, setExpiryYear] = useState('');
   const [cvv, setCvv] = useState('');
-  const navigate = useNavigate();
-
   const [showModal, setShowModal] = useState(false);
+
+  const navigate = useNavigate();
+  const location = useLocation();
+  const selectedSeats = location.state.selectedSeats;
+  const playName = location.state.playName
+  const normalTicket = location.state.normalTicket
+  const studentTicket = location.state.studentTicket
+
+  const saveSeatNumbers = async () => {
+    const user = localStorage.getItem('username');
+    try {
+      const response = await fetch('http://localhost:8000/saveSeatNumbers', {
+        method: 'POST', 
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({ 
+          username: user,
+          playName: playName,
+          selectedSeats: selectedSeats,
+          normalTicket: normalTicket,
+          studentTicket: studentTicket
+        })
+      });
+      console.log(response);
+    } catch (error) {
+      console.error('Error fetching user data:', error);
+    }
+  };
 
   const handleFormSubmit = (event) => {
     event.preventDefault();
+    saveSeatNumbers();
     setShowModal(true);
-    console.log('Ödeme işlemi gerçekleştirildi:', {
-      cardNumber,
-      cardName,
-      expiryMonth,
-      expiryYear,
-      cvv
-    });
+    console.log('Ödeme işlemi gerçekleştirildi:');
 
     // 3 saniye sonra modalı kapat ve anasayfaya yönlendir
     setTimeout(() => {

@@ -11,7 +11,16 @@
 
 // Select the database to use.
 use('TiyatroApp');
-console.log(db.getCollection("users").find({}))
+console.log(db.getCollection("reservations").find({}))
+selectedSeats = ["A11", "A23"]
+username= "asd"
+playName="ads"
+referenceNumber="asds"
+purchaseDate="asds"
+for (const seatNumber of selectedSeats) {
+
+  db.getCollection("reservations").insertOne({ username, playName, seatNumber, referenceNumber, purchaseDate });
+}
 /* 
 // Insert a few documents into the sales collection.
 db.getCollection('users').insertMany([

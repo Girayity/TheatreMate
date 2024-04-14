@@ -78,7 +78,9 @@
 .seat.occupied {
   background-color: var(--occupied-color);
 }
-
+.seat-number {
+  display: block;
+}
 /* Selects the second row f*/
 .seat:nth-of-type(4) {
   margin-right: 24px;

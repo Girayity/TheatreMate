@@ -4,7 +4,7 @@
   import { useNavigate} from 'react-router-dom';
   import Notification from './Notification'; 
 
-  function Login() {
+  function Login({ setIsLoggedIn }) {
     const navigate = useNavigate();
     const [notification, setNotification] = useState(null);
     const [showModal, setShowModal] = useState(false);
@@ -26,11 +26,12 @@
           }
         );
         if (response.data.message === "Giriş başarılı!") {
-          const user = response['username'] 
-          const token = response['token'] 
-          localStorage.setItem('user', JSON.stringify(user));   
+          setIsLoggedIn(true);
+          const user = response.data.user.username
+          const token = response.data.token
+          localStorage.setItem('username', user);
           localStorage.setItem('token', token);
-          localStorage.setItem('isLoggedIn', true);
+          localStorage.setItem('isLoggedIn', 'true');
           setShowModal(true);
           setTimeout(() => {
             navigate(`/`);

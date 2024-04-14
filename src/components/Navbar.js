@@ -1,42 +1,57 @@
-import React, { useState, useEffect } from 'react';
+import React, { useEffect, /* useState */ } from 'react';
 import { NavLink } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faMasksTheater } from '@fortawesome/free-solid-svg-icons';
+/* import axios from 'axios'; */
 
-function Navbar() {
-  const [isLoggedIn, setIsLoggedIn] = useState(true);
+function Navbar({isLoggedIn, setIsLoggedIn}) {
+/*   const [userData, setUserData] = useState(null); */
 
   useEffect(() => {
-    const loggedInStatus = JSON.parse(localStorage.getItem('isLoggedIn'));
-    setIsLoggedIn(loggedInStatus);
-  }, []);
+    const storedIsLoggedIn = localStorage.getItem('isLoggedIn');
+    if (storedIsLoggedIn === 'true') {
+      setIsLoggedIn(true);
+    }
+  }, [setIsLoggedIn]);
+
+/*   const getUserInfo = async () => {
+    const user = localStorage.getItem('username');
+    try {
+      const response = await axios.post('http://localhost:8000/getUserInfo', {
+        username: user, 
+      });
+
+      setUserData(response.data.user); 
+      //console.log(response.data.user.username, response.data.email.email)
+    } catch (error) {
+      console.error('Error fetching user data:', error);
+    }
+  }; */
 
   const handleLogout = () => {
     setIsLoggedIn(false);
-    localStorage.removeItem('isLoggedIn');
-    localStorage.removeItem('token');
-    localStorage.removeItem('user');
+    localStorage.setItem('isLoggedIn', 'false');
   };
 
   return (
     <nav className="mainNav">
       <div className="leftItems">
-        <NavLink to="/"><FontAwesomeIcon icon={faMasksTheater} style={{ marginRight: "6px"}} /></NavLink>
-        <NavLink to="/">ANASAYFA</NavLink>
-        <NavLink to="/plays">ETKİNLİKLER</NavLink>
-        <NavLink to="/stages">SAHNELER</NavLink>
-        <NavLink to="/aboutUs">HAKKIMIZDA</NavLink>
+        <NavLink className="navbar-item" to="/"><FontAwesomeIcon icon={faMasksTheater} style={{ marginRight: "6px"}} /></NavLink>
+        <NavLink className="navbar-item" to="/">ANASAYFA</NavLink>
+        <NavLink className="navbar-item" to="/plays">ETKİNLİKLER</NavLink>
+        <NavLink className="navbar-item" to="/stages">SAHNELER</NavLink>
+        <NavLink className="navbar-item" to="/aboutUs">HAKKIMIZDA</NavLink>
       </div>
       <div className="rightItems">
       {isLoggedIn ? (
           <>
-            <NavLink to="/profile">PROFİL</NavLink>
-            <NavLink to="/" onClick={handleLogout}>ÇIKIŞ YAP</NavLink>
+            <NavLink className="navbar-item" to="/profile" /* onClick={getUserInfo} */>PROFİL</NavLink>
+            <NavLink className="navbar-item" to="/login" onClick={handleLogout}>ÇIKIŞ YAP</NavLink>
           </>
         ) : (
           <>
-            <NavLink to="/login">GİRİŞ YAP</NavLink>
-            <NavLink to="/signup">KAYIT OL</NavLink>
+            <NavLink className="navbar-item" to="/login">GİRİŞ YAP</NavLink>
+            <NavLink className="navbar-item" to="/signup">KAYIT OL</NavLink>
           </>
         )}
       </div>

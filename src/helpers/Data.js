@@ -107,7 +107,7 @@ export const Data = [
     name: 'Hiç Kimsenin Öyküsü',
     image: Play7,
     genre: 'Trajedi & Dram',
-    date: '19 Mart - 26 Mart',
+    date: '19 Mart - 26 Nisan',
     subject: 'Bir tren kompartımanında yolları kesişen iki hayat... Aynı dili konuşan, birbiriyle anlaşan, birbirini anlayan...Onlar yıllar önce farklı ülkelerden gelip aynı ülkeye, aynı şehre, aynı mahalleye yerleşmiş iki göçmen... Ülkede savaş çıkmış, karşıt cephelerde savaşmış, barış süreciyle birlikte evlerine döneceklerdir. Yüzümüzde tebessümle tanık olduğumuz heyecan, gerilim dolu hesaplaşmalarında onur, adalet, vicdan sorgulanırken derin bir yüzleşmeye bizler de ortak olmaya hazır mıyız... ',
     director: "Levent Aras",
     writer: "Baki Erdi Mamikoğlu",

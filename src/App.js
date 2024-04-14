@@ -1,6 +1,6 @@
 import './App.css';
 import { Routes, Route } from 'react-router-dom';
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import Home from './components/Home';
 import Login from './components/Login';
 import Payment from './components/Payment';
@@ -16,12 +16,21 @@ import { Footer } from './components/Footer';
 import Stages from './components/Stages';
 
 function App() {
+  const [isLoggedIn, setIsLoggedIn] = useState(false);
+
+  useEffect(() => {
+    const storedIsLoggedIn = localStorage.getItem('isLoggedIn');
+    if (storedIsLoggedIn === 'true') {
+      setIsLoggedIn(true);
+    }
+  }, []);
+
   return (
     <div className="App">
-      <Navbar/>
+      <Navbar isLoggedIn={isLoggedIn} setIsLoggedIn={setIsLoggedIn}/>
       <Routes>
         <Route path="/" element={<Home />} />
-        <Route path="/login" element={<Login/>} />
+        <Route path="/login" element={<Login setIsLoggedIn={setIsLoggedIn}/>} />
         <Route path="/profile" element={<Profile />} />
         <Route path="/plays" element={<PlaysMenu />} />
         <Route path="/stages" element={<Stages />} />

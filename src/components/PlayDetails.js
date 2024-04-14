@@ -4,7 +4,6 @@ import '../styles/PlayDetails.css';
 
 function PlayDetails() {
   const location = useLocation();
-/*   const img = location.state.image; */
   const name = location.state.name;
   const genre = location.state.genre;
   const subject = location.state.subject;

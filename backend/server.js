@@ -92,6 +92,66 @@ async function run() {
                 res.status(201).json({ message: 'Kayıt başarılı!' });
 
         });
+        
+        app.post('/getUserInfo', jsonParser, async (req, res) => {
+            const { username } = req.body;
+            const user = await client.db("TiyatroApp").collection("users").findOne({ username });
+            const reservations = await client.db("TiyatroApp").collection("reservations").find({ username })
+                .project({ _id: 0, playName: 1, seatNumber: 1, ticketType: 1, ticketPrice: 1, referenceNumber: 1, purchaseDate: 1 }).toArray();;
+
+            if (user) { 
+                return res.status(200).json({ 
+                    user: { username: user.username },
+                    email: { email: user.email },
+                    reservations: reservations,
+                });          
+            }
+        });
+
+        app.post('/saveSeatNumbers', jsonParser, async (req, res) => {
+            const { username, playName, selectedSeats, normalTicket, studentTicket} = req.body;
+            const purchaseDate = new Date().toLocaleString('tr-TR');
+
+            let normalTicketCount = parseInt(normalTicket);
+            let studentTicketCount = parseInt(studentTicket);
+
+            for (const seatNumber of selectedSeats) {
+                const referenceNumber = generateReferenceNumber();
+                let ticketType;
+
+                if (normalTicketCount > 0) {
+                    ticketType = 'Tam';
+                    ticketPrice = "50";
+                    normalTicketCount--;
+                } else if (studentTicketCount > 0) {
+                    ticketType = 'Öğrenci';
+                    ticketPrice = "30";
+                    studentTicketCount--;
+                }
+
+                await client.db("TiyatroApp").collection("reservations").insertOne({ username, playName, seatNumber, ticketType, ticketPrice, referenceNumber, purchaseDate });
+            }
+        });
+
+        app.post('/getOccupiedSeats', jsonParser, async (req, res) => {
+            const { playName } = req.body;
+        
+            const occupiedSeats = await client.db("TiyatroApp").collection("reservations").find({ playName }).toArray();
+            const seatNumbers = occupiedSeats.map(seat => seat.seatNumber);
+
+            return res.status(200).json({
+                occupiedSeats: seatNumbers
+            });
+        });
+
+        function generateReferenceNumber() {
+            const characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ01234567890123456789';
+            let referenceNumber = '';
+            for (let i = 0; i < 6; i++) {
+                referenceNumber += characters.charAt(Math.floor(Math.random() * characters.length));
+            }
+            return referenceNumber;
+        }
 
     } catch (error) {
         console.error('Error:', error);

@@ -33,7 +33,6 @@ function SignUp() {
         body: JSON.stringify(formData)
       });
       const data = await response.json();
-      console.log(data); // Backend'ten gelen yanıtı kontrol etmek için
       if (response.ok) {
         setShowModal(true);
         setTimeout(() => {

@@ -25,6 +25,9 @@
     box-sizing: border-box; 
 }
 
+.stage-text {
+    margin: 15% auto;
+}
 .stage-col img {
     width: 60%; 
     height: 60%;
@@ -33,12 +36,15 @@
     background-size: contain;
 }
 
+.stage-col p {
+    text-align: center;
+}
+
 h3 {
     font-size: 24px;
     text-align: center;
     color: #000; 
     font-weight: 600; 
-    margin: 10px 0;
 }
 
 .stage-col:hover {
