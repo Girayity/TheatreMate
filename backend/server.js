@@ -118,6 +118,7 @@ async function run() {
             for (const seatNumber of selectedSeats) {
                 const referenceNumber = generateReferenceNumber();
                 let ticketType;
+                let ticketPrice;
 
                 if (normalTicketCount > 0) {
                     ticketType = 'Tam';
@@ -127,7 +128,11 @@ async function run() {
                     ticketType = 'Öğrenci';
                     ticketPrice = "30";
                     studentTicketCount--;
-                }
+                } else {
+                    // Eğer öğrenci bileti sayısı 0 ise, kalan biletleri tam olarak kaydet
+                    ticketType = 'Tam';
+                    ticketPrice = "50";
+        }
 
                 await client.db("TiyatroApp").collection("reservations").insertOne({ username, playName, seatNumber, ticketType, ticketPrice, referenceNumber, purchaseDate });
             }
