@@ -10,7 +10,31 @@ export default function SeatSelect() {
     const [occupiedSeats, setOccupiedSeats] = useState([]);
     const [studentTicket, setStudentTicket] = useState('0');
     const [normalTicket, setNormalTicket] = useState('0');
+    
+    // Seçilen koltuklar ve bilet bilgilerini localStorage'da tutmak için anahtarlar
+    const selectedSeatsKey = 'selectedSeats';
+    const normalTicketKey = 'normalTicket';
+    const studentTicketKey = 'studentTicket';
 
+    useEffect(() => {
+        // localStorage'dan seçilen koltukları ve bilet bilgilerini al
+        const initialSelectedSeats = JSON.parse(localStorage.getItem(selectedSeatsKey)) || [];
+        const initialNormalTicket = JSON.parse(localStorage.getItem(normalTicketKey)) || '0';
+        const initialStudentTicket = JSON.parse(localStorage.getItem(studentTicketKey)) || '0';
+
+        // Seçilen koltukları ve bilet bilgilerini state'e ilk değer olarak ata
+        setSelectedSeats(initialSelectedSeats);
+        setNormalTicket(initialNormalTicket);
+        setStudentTicket(initialStudentTicket);
+    }, []);
+
+    // localStorage'a seçilen koltukları ve bilet bilgilerini kaydet
+    useEffect(() => {
+        localStorage.setItem(selectedSeatsKey, JSON.stringify(selectedSeats));
+        localStorage.setItem(normalTicketKey, JSON.stringify(normalTicket));
+        localStorage.setItem(studentTicketKey, JSON.stringify(studentTicket));
+    }, [selectedSeats, normalTicket, studentTicket]);
+    
     // Koltuklar için bir dizi oluştur
     const rows = Array.from({ length: 8 }, (_, index) => String.fromCharCode(65 + index));
     const seats = Array.from({ length: 16 }, (_, index) => index + 1);

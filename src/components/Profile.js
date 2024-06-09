@@ -47,6 +47,7 @@ function Profile() {
                   <li key={index} className="product-container">
                       <div className="product-info">
                           <span><b>Oyun İsmi: </b>{reservation.playName}&nbsp;</span>
+                          <span><b>Oyun Tarihi: </b>{reservation.playDate}&nbsp;</span>
                           <span><b>Koltuk No: </b>{reservation.seatNumber}&nbsp;</span>
                           <span><b>Bilet Türü: </b>{reservation.ticketType}&nbsp;</span>
                           <span><b>Bilet Tutarı: </b>{reservation.ticketPrice}&nbsp;TL</span>

@@ -14,6 +14,7 @@ import PlayDetails from './components/PlayDetails';
 import SeatSelect from './components/SeatSelect';
 import { Footer } from './components/Footer';
 import Stages from './components/Stages';
+import Chatbot from './components/Chatbot';
 
 function App() {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
@@ -41,6 +42,7 @@ function App() {
         <Route path="/plays/:playName/payment" element={<Payment />} />
         <Route path="*" element={<NotFound />} />
       </Routes>
+      <Chatbot/>
       <Footer/>
     </div>
   );

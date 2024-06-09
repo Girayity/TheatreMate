@@ -1,6 +1,6 @@
 import React from 'react';
 import '../styles/Payment.css';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import OrderSummary from './OrderSummary';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faArrowLeft } from '@fortawesome/free-solid-svg-icons';
@@ -13,6 +13,7 @@ function Payment() {
   const [expiryYear, setExpiryYear] = useState('');
   const [cvv, setCvv] = useState('');
   const [showModal, setShowModal] = useState(false);
+  const [paymentCompleted, setPaymentCompleted] = useState(false)
 
   const navigate = useNavigate();
   const location = useLocation();
@@ -48,6 +49,7 @@ function Payment() {
     saveSeatNumbers();
     setShowModal(true);
     console.log('Ödeme işlemi gerçekleştirildi:');
+    setPaymentCompleted(true);
 
     // 3 saniye sonra modalı kapat ve anasayfaya yönlendir
     setTimeout(() => {
@@ -55,6 +57,15 @@ function Payment() {
       navigate('/');
     }, 3000); 
   };
+
+  useEffect(() => {
+    // Ödeme işlemi tamamlandığında localStorage'ı temizle
+    if (paymentCompleted) {
+        localStorage.removeItem("selectedSeats");
+        localStorage.removeItem("normalTicket");
+        localStorage.removeItem("studentTicket");
+    }
+}, [paymentCompleted]);
 
   return (
     

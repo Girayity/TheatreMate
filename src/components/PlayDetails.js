@@ -44,8 +44,8 @@ function PlayDetails() {
               ))}
           </div>
       </div>
-      <Link to={`/plays/${name}/seat-select`}>
-        <button className="playDetail-button">Seans ve Koltuk Bilgileri</button>
+      <Link to={`/plays/${name}/seat-select`} style={{ height: '200px'}}>
+        <button className="playDetail-button">Seans ve Koltuk Bilgileri </button>
       </Link>
     </div>
     
